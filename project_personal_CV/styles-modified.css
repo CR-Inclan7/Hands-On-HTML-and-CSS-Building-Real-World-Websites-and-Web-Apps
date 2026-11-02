@@ -1,81 +1,483 @@
-/* Basic reset for consistent styling */
+/* CV personalizado | Práctica UFV de HTML5, CSS3 y posicionamiento */
+:root {
+    --navy: #132c41;
+    --navy-soft: #214760;
+    --teal: #168c88;
+    --text: #243543;
+    --muted: #617282;
+    --line: #dce5e9;
+    --background: #eef3f5;
+    --white: #ffffff;
+}
+
+/* Reset: evita diferencias de espaciado entre navegadores. */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    /* Using Arial font for simplicity */
-    line-height: 1.6;
-    /* Spacing between lines */
+    margin: 0;
+    padding: 42px 22px;
+    background: var(--background);
+    color: var(--text);
+    font: 16px/1.65 "Segoe UI", Arial, sans-serif;
 }
 
+a {
+    color: inherit;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--teal);
+    outline-offset: 4px;
+}
+
+/* Mantiene el ID #cv que ya existía en la plantilla del profesor. */
 #cv {
-    max-width: 800px;
-    /* CV width */
-    margin: 20px auto;
-    /* Center the CV on the page */
-    padding: 20px;
-    border: 1px solid #ddd;
-    /* Border around the CV */
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 14px 55px rgba(19, 44, 65, .10);
+    overflow: hidden;
+    border-radius: 16px;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 20px;
-    /* Space below the header */
+/* POSITION RELATIVE: hace de referencia a la insignia absoluta. */
+.hero {
+    position: relative;
+    isolation: isolate;
+    padding: 62px 68px 58px;
+    color: #fff;
+    background: linear-gradient(120deg, #132c41 0%, #1a4962 100%);
+    overflow: hidden;
 }
 
-header h1 {
-    color: #333;
-    /* Dark text color for the name */
-    margin-bottom: 5px;
-    /* Small spacing below the name */
+/* POSITION ABSOLUTE + Z-INDEX: círculo decorativo detrás del texto. */
+.hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 320px;
+    height: 320px;
+    right: -125px;
+    top: -150px;
+    border-radius: 50%;
+    background: rgba(100, 231, 217, .13);
 }
 
-header p {
-    color: #666;
-    /* Lighter text color for the title */
+.eyebrow,
+.section-kicker {
+    margin: 0 0 14px;
+    font-size: .73rem;
+    font-weight: 800;
+    letter-spacing: .16em;
 }
 
-/* Styling for each section's title */
-h2 {
-    background-color: #f4f4f4;
-    /* Light gray background */
-    padding: 10px;
-    margin-bottom: 15px;
-    /* Space below the title */
+.eyebrow {
+    color: #80d9d0;
 }
 
-/* Styling for the contact information */
-#contact address p {
-    margin-bottom: 10px;
-    /* Space between each piece of contact info */
+.hero h1 {
+    max-width: 780px;
+    margin: 0;
+    font-size: 3.15rem;
+    /* Alternativa si clamp() no está soportado. */
+    font-size: clamp(2rem, 4.1vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -.035em;
 }
 
-/* Styling for the skills list */
-#skills ul {
-    list-style-type: none;
-    /* Remove the default bullet points */
+.hero h1 span {
+    display: block;
 }
 
-#skills li {
-    background-color: #f9f9f9;
-    /* Lighter gray background */
-    padding: 5px;
-    margin-bottom: 5px;
-    /* Space between each skill */
+.hero-subtitle {
+    max-width: 620px;
+    margin: 22px 0 0;
+    font-size: 1.07rem;
+    color: #d6e7ef;
 }
 
-/* Styling for each work experience */
-#experience article {
-    margin-bottom: 15px;
-    /* Space between each work experience */
+/* POSITION ABSOLUTE: posiciona la etiqueta en la esquina del header. */
+.hero-badge {
+    position: absolute;
+    right: 38px;
+    bottom: 20px;
+    z-index: 1;
+    padding: 7px 12px;
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 100px;
+    font-size: .64rem;
+    font-weight: 750;
+    letter-spacing: .09em;
+    color: #d5f9f4;
+    background: rgba(19, 44, 65, .45);
 }
 
-#experience h3 {
-    margin-bottom: 5px;
-    /* Space below the job title */
+.layout {
+    display: grid;
+    grid-template-columns: 292px minmax(0, 1fr);
+}
+
+.sidebar {
+    padding: 45px 31px;
+    background: #f4f8f9;
+    border-right: 1px solid var(--line);
+}
+
+.sidebar-section {
+    margin: 0 0 42px;
+}
+
+.sidebar-section:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar h2 {
+    margin: 0 0 17px;
+    color: var(--navy);
+    font-size: 1rem;
+    font-weight: 800;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c9dfe0;
+}
+
+.sidebar address {
+    display: grid;
+    gap: 12px;
+    font-style: normal;
+    overflow-wrap: anywhere;
+}
+
+.sidebar address a {
+    color: var(--navy-soft);
+    text-decoration: none;
+    font-weight: 650;
+    font-size: .91rem;
+}
+
+.sidebar address a:hover {
+    color: var(--teal);
+    text-decoration: underline;
+}
+
+.tag-list,
+.plain-list,
+.detail-list {
+    margin: 0;
+    padding: 0;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+}
+
+.tag-list li {
+    padding: 6px 10px;
+    border-radius: 7px;
+    background: #e3eeee;
+    color: var(--navy-soft);
+    font-size: .81rem;
+    font-weight: 650;
+}
+
+.plain-list {
+    list-style: none;
+}
+
+.plain-list li {
+    padding: 7px 0;
+    font-size: .91rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.plain-list li:last-child {
+    border-bottom: none;
+}
+
+.languages-list,
+.languages-list div {
+    margin: 0;
+}
+
+.languages-list div {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 9px 0;
+}
+
+.languages-list dt {
+    font-weight: 750;
+}
+
+.languages-list dd {
+    margin: 0;
+    color: var(--muted);
+}
+
+.main-content {
+    min-width: 0;
+    padding: 42px 55px 54px;
+}
+
+.section {
+    padding-bottom: 33px;
+    margin-bottom: 33px;
+    border-bottom: 1px solid var(--line);
+}
+
+.section:last-child {
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.section-kicker {
+    color: var(--teal);
+    margin-bottom: 4px;
+}
+
+.section h2 {
+    margin: 0 0 15px;
+    color: var(--navy);
+    font-size: 1.45rem;
+    line-height: 1.3;
+    letter-spacing: -.015em;
+}
+
+.section p {
+    margin: 0;
+}
+
+.timeline-entry {
+    margin-bottom: 27px;
+}
+
+.timeline-entry:last-child {
+    margin-bottom: 0;
+}
+
+.entry-topline {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.entry-topline h3 {
+    margin: 0;
+    color: var(--navy);
+    font-size: 1.03rem;
+    line-height: 1.38;
+}
+
+.subtle {
+    font-weight: 500;
+    color: var(--muted);
+}
+
+.date {
+    flex-shrink: 0;
+    color: var(--teal);
+    font-size: .80rem;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+.section p.institution {
+    margin: 4px 0 10px;
+    color: var(--muted);
+    font-size: .92rem;
+    font-weight: 700;
+}
+
+.timeline-entry>p:not(.institution) {
+    font-size: .93rem;
+}
+
+.detail-list {
+    padding-left: 19px;
+}
+
+.detail-list li {
+    padding: 0 0 8px 3px;
+    font-size: .93rem;
+}
+
+.detail-list li::marker {
+    color: var(--teal);
+}
+
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    padding: 18px 55px;
+    color: #6f8490;
+    border-top: 1px solid var(--line);
+    font-size: .77rem;
+}
+
+/* POSITION FIXED + Z-INDEX: enlace para volver al principio al hacer scroll. */
+.back-to-top {
+    position: fixed;
+    right: 26px;
+    bottom: 23px;
+    z-index: 10;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: var(--white);
+    font-size: 1.55rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(19, 44, 65, .24);
+}
+
+.back-to-top:hover {
+    background: var(--navy-soft);
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 8px;
+}
+
+.skip-link:focus {
+    left: 16px;
+    z-index: 20;
+    background: white;
+    color: var(--navy);
+    padding: 8px 14px;
+}
+
+/* Adaptación del diseño a pantallas de móvil y tablet. */
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 240px minmax(0, 1fr);
+    }
+
+    .hero {
+        padding: 52px 40px 64px;
+    }
+
+    .main-content {
+        padding: 35px 32px;
+    }
+
+    .sidebar {
+        padding: 35px 24px;
+    }
+
+    .page-footer {
+        padding: 18px 32px;
+    }
+}
+
+@media (max-width: 680px) {
+    body {
+        padding: 0;
+    }
+
+    #cv {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .hero {
+        padding: 42px 25px 69px;
+    }
+
+    .hero-badge {
+        right: auto;
+        left: 25px;
+        bottom: 20px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+        padding: 30px 25px;
+    }
+
+    .sidebar-section {
+        margin-bottom: 26px;
+    }
+
+    .main-content {
+        padding: 31px 25px 38px;
+    }
+
+    .entry-topline {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .date {
+        white-space: normal;
+    }
+
+    .page-footer {
+        padding: 19px 25px;
+    }
+
+    .back-to-top {
+        width: 43px;
+        height: 43px;
+        right: 13px;
+        bottom: 14px;
+    }
+}
+
+/* Una versión limpia si se imprime o guarda como PDF desde Chrome. */
+@media print {
+    body {
+        padding: 0;
+        background: white;
+        font-size: 11px;
+    }
+
+    #cv {
+        max-width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .hero {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .sidebar {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .back-to-top,
+    .skip-link {
+        display: none;
+    }
+
+    .section,
+    .timeline-entry {
+        break-inside: avoid;
+    }
 }

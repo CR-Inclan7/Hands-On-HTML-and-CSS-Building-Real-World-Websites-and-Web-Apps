@@ -1,63 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <!-- Metadata for the browser -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Link to the CSS stylesheet -->
+    <meta name="description"
+        content="Currículum web de Guillermo López-Quiroga Lizarraga: ADE, análisis de datos, control de gestión y finanzas.">
+    <title>Guillermo López-Quiroga Lizarraga | CV</title>
+    <!-- Mantiene el nombre de la hoja de estilos de la plantilla original -->
     <link rel="stylesheet" href="styles-modified.css">
-
-    <!-- Title of the page -->
-    <title>Student CV</title>
 </head>
 
-<body>
-    <!-- Main container for the CV -->
-    <div id="cv">
+<body id="inicio">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-        <!-- Student's name and title -->
-        <header>
-            <h1>Jane Doe</h1>
-            <p>Computer Science Student</p>
+    <!-- Contenedor principal de nuestro currículum -->
+    <div id="cv">
+        <header class="hero">
+            <p class="eyebrow">CURRÍCULUM PROFESIONAL</p>
+            <h1>Guillermo <span>López-Quiroga Lizarraga</span></h1>
+            <p class="hero-subtitle">Estudiante de ADE y Análisis de Datos con base en Ingeniería Matemática.</p>
+            <!-- Ejemplo de position: absolute dentro de un elemento relative -->
+            <span class="hero-badge">DATOS · FINANZAS · GESTIÓN</span>
         </header>
 
-        <!-- Contact information -->
-        <section id="contact">
-            <h2>Contact Information</h2>
-            <address>
-                <p>Email: janedoe@example.com</p>
-                <p>Phone: +1234567890</p>
-            </address>
-        </section>
+        <div class="layout">
+            <!-- Columna de información de contacto y habilidades -->
+            <aside class="sidebar" aria-label="Información complementaria">
+                <section id="contact" class="sidebar-section">
+                    <h2>Contacto</h2>
+                    <address>
+                        <a href="mailto:guilleloqui@gmail.com">guilleloqui@gmail.com</a>
+                        <a href="tel:+34618058378">618 05 83 78</a>
+                    </address>
+                </section>
 
-        <!-- Education details -->
-        <section id="education">
-            <h2>Education</h2>
-            <p>BS in Computer Science, XYZ University, 2023</p>
-        </section>
+                <section id="skills" class="sidebar-section">
+                    <h2>Competencias técnicas</h2>
+                    <ul class="tag-list">
+                        <li>Análisis cuantitativo</li>
+                        <li>Modelización matemática</li>
+                        <li>Precisión contable</li>
+                        <li>Gestión de datos</li>
+                        <li>Reporting</li>
+                        <li>Microsoft Office avanzado</li>
+                    </ul>
+                </section>
 
-        <!-- Skills -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>HTML & CSS</li>
-                <li>JavaScript</li>
-                <li>Python</li>
-            </ul>
-        </section>
+                <section class="sidebar-section" aria-labelledby="habilidades-personales">
+                    <h2 id="habilidades-personales">Habilidades personales</h2>
+                    <ul class="plain-list">
+                        <li>Pensamiento analítico</li>
+                        <li>Resolución de problemas bajo presión</li>
+                        <li>Empatía y gestión del tiempo</li>
+                        <li>Proactividad</li>
+                        <li>Liderazgo colaborativo</li>
+                    </ul>
+                </section>
 
-        <!-- Experience -->
-        <section id="experience">
-            <h2>Experience</h2>
-            <!-- Each work experience can be an article -->
-            <article>
-                <h3>Intern at ABC Corp</h3>
-                <p>Developed XYZ features.</p>
-            </article>
-        </section>
+                <section id="languages" class="sidebar-section">
+                    <h2>Idiomas</h2>
+                    <dl class="languages-list">
+                        <div>
+                            <dt>Español</dt>
+                            <dd>Nativo</dd>
+                        </div>
+                        <div>
+                            <dt>Inglés</dt>
+                            <dd>Avanzado</dd>
+                        </div>
+                    </dl>
+                </section>
+            </aside>
+
+            <!-- Columna principal: experiencia, formación y compromiso social -->
+            <main id="contenido" class="main-content">
+                <section id="about" class="section">
+                    <p class="section-kicker">PERFIL</p>
+                    <h2>Sobre mí</h2>
+                    <p>Combino el pensamiento cuantitativo con experiencia en control de gestión y finanzas. Mi
+                        trayectoria en voluntariado aporta empatía a mi capacidad técnica. Destaco por abordar problemas
+                        complejos con calma, precisión y visión estratégica.</p>
+                </section>
+
+                <section id="experience" class="section">
+                    <p class="section-kicker">TRAYECTORIA</p>
+                    <h2>Experiencia profesional</h2>
+                    <article class="timeline-entry">
+                        <div class="entry-topline">
+                            <h3>Junior Controller <span class="subtle">· Prácticas</span></h3>
+                            <time class="date" datetime="2026-01">Ene. – abr. 2026</time>
+                        </div>
+                        <p class="institution">Alesco Partners S. L.</p>
+                        <ul class="detail-list">
+                            <li><strong>Control financiero:</strong> apoyo en la supervisión de estados financieros,
+                                desviaciones presupuestarias y conciliación contable.</li>
+                            <li><strong>Análisis y reporting:</strong> tratamiento de datos financieros y operativos con
+                                Excel avanzado para informes y seguimiento de KPI.</li>
+                            <li><strong>Mejora de procesos:</strong> colaboración en la optimización de flujos de
+                                información y procesos internos.</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section id="education" class="section">
+                    <p class="section-kicker">APRENDIZAJE</p>
+                    <h2>Formación académica</h2>
+                    <article class="timeline-entry">
+                        <div class="entry-topline">
+                            <h3>Grado en ADE y título propio en Análisis de Datos</h3>
+                            <span class="date">2022 – 2026</span>
+                        </div>
+                        <p class="institution">Universidad Francisco de Vitoria (UFV)</p>
+                        <p>Trabajo Fin de Grado (TFG) en curso.</p>
+                    </article>
+                    <article class="timeline-entry">
+                        <div class="entry-topline">
+                            <h3>Grado en Ingeniería Matemática <span class="subtle">· Primer curso</span></h3>
+                            <span class="date">2021 – 2022</span>
+                        </div>
+                        <p class="institution">Universidad Francisco de Vitoria (UFV)</p>
+                        <p>Formación en Álgebra I, Programación I, Fundamentos de Computación e Historia de la Ciencia;
+                            bases de modelización matemática y desarrollo de algoritmos.</p>
+                    </article>
+                    <article class="timeline-entry">
+                        <div class="entry-topline">
+                            <h3>Bachillerato Tecnológico con Economía</h3>
+                            <span class="date">2019 – 2021</span>
+                        </div>
+                        <p class="institution">Colegio Nuestra Señora del Pilar</p>
+                        <p>Calificación: notable.</p>
+                    </article>
+                </section>
+
+                <section id="courses" class="section">
+                    <p class="section-kicker">FORMACIÓN COMPLEMENTARIA</p>
+                    <h2>Cursos</h2>
+                    <ul class="detail-list">
+                        <li>Negociación y confrontación de conflicto.</li>
+                        <li>La Red SubterranIA.</li>
+                    </ul>
+                </section>
+
+                <section id="volunteering" class="section">
+                    <p class="section-kicker">COMPROMISO SOCIAL</p>
+                    <h2>Voluntariado</h2>
+                    <article class="timeline-entry">
+                        <div class="entry-topline">
+                            <h3>Apoyo escolar</h3>
+                            <span class="date">Oct. 2023 – dic. 2024</span>
+                        </div>
+                        <p class="institution">Parroquia San Ramón Nonato</p>
+                        <p>Apoyo escolar a niños con necesidades educativas y falta de recursos familiares suficientes.
+                        </p>
+                    </article>
+                    <article class="timeline-entry">
+                        <div class="entry-topline">
+                            <h3>Monitor de Primaria</h3>
+                            <span class="date">Curso 2019 – 2020</span>
+                        </div>
+                        <p class="institution">Huellas · Colegio Nuestra Señora del Pilar</p>
+                        <p>Actividades y acompañamiento a niños de Educación Primaria.</p>
+                    </article>
+                </section>
+            </main>
+        </div>
+
+        <footer class="page-footer">
+            <span>Guillermo López-Quiroga Lizarraga</span>
+            <span>CV web · Práctica de HTML, CSS y Git</span>
+        </footer>
     </div>
+
+    <!-- Ejemplo de position: fixed y z-index: siempre visible al navegar -->
+    <a href="#inicio" class="back-to-top" aria-label="Volver al inicio de la página" title="Volver arriba">↑</a>
 </body>
 
 </html>
